@@ -27,18 +27,6 @@ class General(commands.Cog, name="general"):
             name="Remove spoilers", callback=self.remove_spoilers
         )
         self.bot.tree.add_command(self.context_menu_message)
-    
-    # def __init__(self, bot, parent) -> None:
-    #     self.bot = bot
-    #     self.parent = 1
-    #     self.context_menu_user = app_commands.ContextMenu(
-    #         name="Grab ID", callback=self.grab_id
-    #     )
-    #     self.bot.tree.add_command(self.context_menu_user)
-    #     self.context_menu_message = app_commands.ContextMenu(
-    #         name="Remove spoilers", callback=self.remove_spoilers
-    #     )
-    #     self.bot.tree.add_command(self.context_menu_message)
 
     # Message context menu command
     async def remove_spoilers(
@@ -182,12 +170,6 @@ class General(commands.Cog, name="general"):
         name="invite",
         description="Get the invite link of the bot to be able to invite it.",
     )
-    
-    # @commands.hybrid_com(
-    #     name="visit",
-    #     description="Get the visit link of the bot to be able to visit it.",
-    # )
-    
     async def invite(self, context: Context) -> None:
         """
         Get the invite link of the bot to be able to invite it.

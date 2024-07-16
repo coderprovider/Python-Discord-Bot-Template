@@ -12,8 +12,13 @@ from discord.ext.commands import Context
 
 # Here we name the cog and create a new class for the cog.
 class Template(commands.Cog, name="template"):
-    def __init__(self, bot) -> None:
-        self.bot = bot
+    def __init__(self, bot) -> None:    
+        self.bot = bot  
+        # self.parent = 1  
+        
+    # def __init__(self, bot, parent) -> None:    
+    #     self.bot = bot  
+    #     # self.parent = 1 
 
     # Here you can just add your own commands, you'll always need to provide "self" as first parameter.
 
