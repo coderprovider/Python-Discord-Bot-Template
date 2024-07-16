@@ -11,7 +11,7 @@ import aiosqlite
 
 
 class DatabaseManager:
-    def __init__(self, *, connection: aiosqlite.Connection) -> None:
+    def __init__(self, *, connection: aiosqlite.Connection) -> None:    
         self.connection = connection
 
     async def add_warn(
@@ -20,14 +20,15 @@ class DatabaseManager:
         """
         This function will add a warn to the database.
 
-        :param user_id: The ID of the user that should be warned.
+        :param user_id: The ID of the user that should be warned.   
         :param reason: The reason why the user should be warned.
         """
         rows = await self.connection.execute(
             "SELECT id FROM warns WHERE user_id=? AND server_id=? ORDER BY id DESC LIMIT 1",
             (
                 user_id,
-                server_id,
+                server_id,  
+                # auth_id,  
             ),
         )
         async with rows as cursor:
@@ -41,6 +42,7 @@ class DatabaseManager:
                     server_id,
                     moderator_id,
                     reason,
+                    # authentication,
                 ),
             )
             await self.connection.commit()

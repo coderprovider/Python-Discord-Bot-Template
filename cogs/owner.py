@@ -15,6 +15,9 @@ from discord.ext.commands import Context
 class Owner(commands.Cog, name="owner"):
     def __init__(self, bot) -> None:
         self.bot = bot
+        
+    # def __init__(self, bot, parent) -> None:
+    #     self.bot = bot
 
     @commands.command(
         name="sync",
@@ -55,6 +58,7 @@ class Owner(commands.Cog, name="owner"):
     @commands.command(
         name="unsync",
         description="Unsynchonizes the slash commands.",
+        # description="synchonizes the slash.",
     )
     @app_commands.describe(
         scope="The scope of the sync. Can be `global`, `current_guild` or `guild`"
@@ -197,6 +201,7 @@ class Owner(commands.Cog, name="owner"):
         :param context: The hybrid command context.
         :param message: The message that should be repeated by the bot.
         """
+        # await context.send('message')
         await context.send(message)
 
     @commands.hybrid_command(

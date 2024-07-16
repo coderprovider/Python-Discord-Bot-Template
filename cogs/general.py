@@ -172,11 +172,11 @@ class General(commands.Cog, name="general"):
         :param context: The hybrid command context.
         """
         embed = discord.Embed(
-            title="🏓 Pong!",
+            title="🏓 Pong!",   
             description=f"The bot latency is {round(self.bot.latency * 1000)}ms.",
             color=0xBEBEFE,
         )
-        await context.send(embed=embed)
+        await context.send(embed=embed) 
 
     @commands.hybrid_command(
         name="invite",
@@ -187,7 +187,7 @@ class General(commands.Cog, name="general"):
     #     name="visit",
     #     description="Get the visit link of the bot to be able to visit it.",
     # )
-    
+        
     async def invite(self, context: Context) -> None:
         """
         Get the invite link of the bot to be able to invite it.

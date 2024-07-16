@@ -15,12 +15,12 @@ from discord.ext import commands
 from discord.ext.commands import Context
 
 
-class Moderation(commands.Cog, name="moderation"):
+class Moderation(commands.Cog, name="moderation"):  
     def __init__(self, bot) -> None:
         self.bot = bot
 
     @commands.hybrid_command(
-        name="kick",
+        name="kick",    
         description="Kick a user out of the server.",
     )
     @commands.has_permissions(kick_members=True)
