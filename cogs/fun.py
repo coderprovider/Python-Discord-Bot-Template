@@ -13,26 +13,25 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Context    
 
-
 class Choice(discord.ui.View):
     def __init__(self) -> None:
         super().__init__()
-        self.value = None
+        self.value = None   
 
     @discord.ui.button(label="Heads", style=discord.ButtonStyle.blurple)
     async def confirm(
         self, button: discord.ui.Button, interaction: discord.Interaction
     ) -> None:
         self.value = "heads"
-        self.stop()
+        self.stop() 
 
     @discord.ui.button(label="Tails", style=discord.ButtonStyle.blurple)
     async def cancel(
-        self, button: discord.ui.Button, interaction: discord.Interaction
+        self, button: discord.ui.Button, interaction: discord.Interaction   
     ) -> None:
         self.value = "tails"
         self.stop()
-
+    
 
 class RockPaperScissors(discord.ui.Select):
     def __init__(self) -> None:

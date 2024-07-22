@@ -18,7 +18,7 @@ from discord.ext.commands import Context
 class Moderation(commands.Cog, name="moderation"):  
     def __init__(self, bot) -> None:
         self.bot = bot
-
+    
     @commands.hybrid_command(
         name="kick",    
         description="Kick a user out of the server.",
